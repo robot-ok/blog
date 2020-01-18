@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>鼠标控制图片放大缩小</title>
+<script type="text/javascript">
+window.onload=function(){
+    var display = document.getElementById('display');
+    var _wheelDelta=0,upcheck=-1;
+    addScrollListener(display,wheelHandle);
+}
+function addScrollListener(element, wheelHandle) {
+    if(typeof element != 'object') return;
+    if(typeof wheelHandle != 'function') return;
+    // 监测浏览器
+    if(typeof arguments.callee.browser == 'undefined') {
+        var user = navigator.userAgent;
+        var b = {};
+        b.opera = user.indexOf("Opera") > -1 && typeof window.opera == "object";
+        b.khtml = (user.indexOf("KHTML") > -1 || user.indexOf("AppleWebKit") > -1 || user.indexOf("Konqueror") > -1) && !b.opera;
+        b.ie = user.indexOf("MSIE") > -1 && !b.opera;
+        b.gecko = user.indexOf("Gecko") > -1 && !b.khtml;
+        arguments.callee.browser = b;
+    }
+    if(element == window)
+        element = document;
+    if(arguments.callee.browser.ie)
+        element.attachEvent('onmousewheel', wheelHandle);
+    else
+        element.addEventListener(arguments.callee.browser.gecko ? 'DOMMouseScroll' : 'mousewheel', wheelHandle, false);
+}
+function getStyleValue(objname,stylename){
+    if(objname.currentStyle){
+        return objname.currentStyle[stylename]
+    }else if(window.getComputedStyle){
+        stylename = stylename.replace(/([A-Z])/g, "-$1").toLowerCase(); 
+        return window.getComputedStyle(objname, null).getPropertyValue(stylename); 
+        //return window.getComputedStyle(objname , null)[stylename];
+    }
+}
+function wheelHandle(e) {
+    if(e.wheelDelta) {
+        //document.getElementById('display').innerHTML = (e.wheelDelta > 0 ? '上' : '下');
+
+        upcheck = e.wheelDelta >0 ? 1 : 0;
+        //_wheelDelta += e.wheelDelta/(-40);
+    } else {
+        //alert(e.detail);
+        upcheck = e.detail <0 ? 1 : 0;
+        //_wheelDelta +=e.detail;
+    }
+    showimg();
+}
+
+function showimg(){
+    var tmpobj = document.getElementById("showimg");
+    var width = parseInt(getStyleValue(tmpobj,'width'));
+    var height = parseInt(getStyleValue(tmpobj,'height'));
+    var i = width/height;//    alert(i);
+    //alert( width + '   ' + height);
+    /*if(_wheelDelta<0){
+        if(width>=0){
+            tmpobj.style.height = (width + _wheelDelta*10) + 'px';
+            tmpobj.style.width = (height + _wheelDelta*10*i) + 'px';
+        }
+    }else{
+        if(width<=1024){
+            tmpobj.style.height = (width - _wheelDelta*10) + 'px';
+            tmpobj.style.width = (height - _wheelDelta*10*i) + 'px';
+        }
+    }*/
+    if(upcheck){
+        if(width<=1024){
+            tmpobj.style.height = (height + 30) + 'px';
+            tmpobj.style.width = (width + 30*i) + 'px';
+        }
+    }else{
+        if(width>=35){
+            tmpobj.style.height = (height - 30) + 'px';
+            tmpobj.style.width = (width - 30*i) + 'px';
+        }
+    }
+}
+
+/*var scrollfunc = function(event) {
+var direct = 0;
+if (event.wheelDelta) {
+    alert(wheelDelta);
+    //direct = event.wheelDelta > 0 ? 1 : -1;
+} else if (event.detail) {
+    alert(event.detail);
+    //direct = event.detail < 0 ? 1 : -1;
+}
+};
+Event.observe(document, 'mousewheel', scrollfunc);
+Event.observe(document, 'DOMMouseScroll', scrollfunc);*/ //firefox
+
+</script>
+<style type="text/css">
+*{padding:0;margin:0;}
+img{border:none;}
+#display{max-width:400px;max-height:512px;margin:30px auto;overflow:scroll;}
+</style>
+</head>
+<body>
+<div id="display"><img src="tupian.jpg" id="showimg" width="390" height="500" style="display:block;margin:auto;" /></div>
+</body>
+</html>

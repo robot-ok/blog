@@ -1,0 +1,5 @@
+[2019-08-21T11:42:58.468] [INFO] default - info 程序启动成功
+[2019-08-21T11:42:58.475] [WARN] default - warn 程序启动成功
+[2019-08-21T11:42:58.476] [ERROR] default - error 程序启动成功
+[2019-08-21T11:42:58.752] [INFO] default - serialPort1 IsOpen: false
+[2019-08-21T11:42:58.752] [INFO] default -  serialPort1 err: [Error: Opening COM1: File not found]

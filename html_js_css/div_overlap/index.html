@@ -1,0 +1,23 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="utf-8" /> 
+<title>div重叠 叠加实例 排层叠顺序</title> 
+<style> 
+.div-relative{position:relative;color:#000;border:1px solid #000;width:500px;height:400px} 
+.div-a{ position:absolute;left:30px;top:30px;z-index:2;background:#F00;width:50%;height:50%} 
+/* div背景色为红色 */ 
+.div-b{ position:absolute;left:50px;top:60px;z-index:3;background:#FF0;width:50%;height:50%} 
+/* 背景为黄色 */ 
+.div-c{ position:absolute;left:80px;top:80px;z-index:1;background:#00F;width:50%;height:50%} 
+/* 背景为蓝色 */ 
+</style> 
+</head> 
+<body> 
+<div class="div-relative"> 
+<div class="div-a">我背景为红色</div> 
+<div class="div-b">我背景为黄色</div> 
+<div class="div-c">我背景为蓝色</div> 
+</div> 
+</body> 
+</html> 

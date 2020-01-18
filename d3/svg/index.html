@@ -1,0 +1,17 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>HelloWorld</title>
+</head>
+<body>
+<p>显示svg</p>
+
+<script src="https://d3js.org/d3.v4.js"  charset="utf-8"></script>
+<script>
+d3.xml("Thefactory.svg").mimeType("image/svg+xml").get(function(error, xml) {
+  if (error) throw error;
+  document.body.appendChild(xml.documentElement);
+});
+</script>
+</body>
+</html>

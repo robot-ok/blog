@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+ 
+<head>
+    <title>Page Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        .wrap{
+                margin: 0 auto;
+                width:600px;
+                height:600px;
+                border:1px solid gray;
+                background-color:#1ad4bc;
+                
+            }
+            .wrap>div{
+                float:left;
+                }
+                .wrap>#p{
+                    width:80%;
+                    height:500px; 
+                    position:relative;
+                    overflow:auto;
+                    border:1px solid gray;
+                    background-color:#1b7718;
+                }
+                div.d{
+                    width:19%;
+                    height:500px;
+                    background-color:#88ec84;
+                     
+                }
+    #dd{
+    width:100px;
+    height:100px;
+    left:300px;
+    top:300px;
+    
+    position:absolute;
+    background-color:#c81623;
+    }  
+    </style>
+    <script>
+        onload=function(){
+                var div=document.getElementById("dd");
+                var sf=document.getElementById("sf");
+                var ydx=document.getElementById("ydx");
+                var ydy=document.getElementById("ydy");
+                var p=document.getElementById("p");
+                sf.value=parseFloat(getStyle(div,"width"))*100/500;
+                ydx.value=parseFloat(getStyle(div,"left"))*100/parseFloat(getStyle(p,"width"));
+                ydy.value=parseFloat(getStyle(div,"top"))*100/parseFloat(getStyle(p,"height"));
+        }
+        var rotate=function(obj){
+            var div=document.getElementById("dd");
+            div.style['transform'] = div.style['-webkit-transform'] = 'rotate(' + obj.value*360*0.01 + 'deg)'; 
+        } 
+        var scale=function(obj,w){
+            var div=document.getElementById("dd");
+            var h=parseFloat(getStyle(div,"height"));
+            var ww=parseFloat(getStyle(div,"width"));
+            div.style.height=div.style.width=w*0.01*obj.value +"px";
+            var lef=parseFloat(getStyle(div,"left"));
+            var tp = parseFloat(getStyle(div,"top"));
+            div.style.left=lef-(parseFloat(div.style.width)-ww)/2+"px";
+            div.style.top=tp-(parseFloat(div.style.height)-h)/2+"px";
+        }
+         
+        var movex=function(obj,w){
+                var div=document.getElementById("dd");
+                var p=document.getElementById("p");
+                div.style.left=obj.value*0.01*(parseFloat(getStyle(p,"width"))-parseFloat(getStyle(div,"width")))+"px";
+        }
+         
+        var movey=function(obj,w){
+                var div=document.getElementById("dd");
+                var p=document.getElementById("p");
+                div.style.top=obj.value*0.01*(parseFloat(getStyle(p,"height"))-parseFloat(getStyle(div,"height")))+"px";
+        }
+         
+        var getStyle=function(obj,attr){
+                    if(obj.currentStyle){
+                        return obj.currentStyle[attr];
+                    }else if(window.getComputedStyle){
+                        var styleVal = window.getComputedStyle(obj, null)[attr] 
+                        ? window.getComputedStyle(obj, null)[attr] :
+                      window.getComputedStyle(obj, null).getPropertyValue(attr);
+                      return styleVal;
+                    }
+                }
+
+                function zoomImg(obj){          
+                // 一开始默认是100%         
+                let zoom = parseInt(obj.style.zoom, 10) || 100;       
+                    // 滚轮滚一下wheelDelta的值增加或减少120         
+                zoom += event.wheelDelta/12;      
+                    if(zoom>0)    {          
+                obj.style.zoom = zoom + '%';  
+                    }    
+                    return false;      
+                }
+    </script>
+</head>
+ 
+<body>
+ <div class="wrap" onmousewheel="return zoomImg(this)">
+   <div id="p">
+       <div id="dd" >
+
+       </div>   
+   </div>
+   <div class="d">
+       旋转:
+      <input type="range" id="xz" max=100 min=0 value=0 oninput="rotate(this)"  /> 
+      缩放:
+      <input type="range" id="sf" max=100 min=0 value=0 oninput="scale(this,500)" />
+      移动X:
+      <input type="range" id="ydx" max=100 min=0 value=0 oninput="movex(this)" />   
+      移动Y:
+      <input type="range" id="ydy" max=100 min=0 value=0 oninput="movey(this)"/> 
+   </div>   
+ </div>
+</body>
+ 
+</html>

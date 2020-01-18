@@ -1,0 +1,43 @@
+[2019-08-21T11:42:58.468] [INFO] default - info 程序启动成功
+[2019-08-21T11:42:58.475] [WARN] default - warn 程序启动成功
+[2019-08-21T11:42:58.476] [ERROR] default - error 程序启动成功
+[2019-08-21T11:42:58.752] [INFO] default - serialPort1 IsOpen: false
+[2019-08-21T11:42:58.752] [INFO] default -  serialPort1 err: [Error: Opening COM1: File not found]
+[2019-08-21T13:11:23.001] [INFO] default - info 程序启动成功
+[2019-08-21T13:11:23.009] [WARN] default - warn 程序启动成功
+[2019-08-21T13:11:23.009] [ERROR] default - error 程序启动成功
+[2019-08-21T13:11:23.099] [INFO] default - serialPort1 IsOpen: false
+[2019-08-21T13:11:23.099] [INFO] default -  serialPort1 err: [Error: Opening COM1: File not found]
+[2019-08-21T13:20:40.653] [INFO] default - info 程序启动成功
+[2019-08-21T13:20:40.660] [WARN] default - warn 程序启动成功
+[2019-08-21T13:20:40.661] [ERROR] default - error 程序启动成功
+[2019-08-21T13:20:40.943] [INFO] default - serialPort1 IsOpen: true
+[2019-08-21T13:20:40.943] [INFO] default -  serialPort1 err: null
+[2019-08-21T13:20:40.944] [INFO] default - COM1
+[2019-08-21T13:20:40.945] [INFO] default - VSBC\DEVICES\0000
+[2019-08-21T13:20:40.945] [INFO] default - ELTIMA Software
+[2019-08-21T13:20:40.945] [INFO] default - COM2
+[2019-08-21T13:20:40.945] [INFO] default - VSBC\DEVICES\0001
+[2019-08-21T13:20:40.946] [INFO] default - ELTIMA Software
+[2019-08-21T13:20:55.772] [INFO] default - info 程序启动成功
+[2019-08-21T13:20:55.778] [WARN] default - warn 程序启动成功
+[2019-08-21T13:20:55.779] [ERROR] default - error 程序启动成功
+[2019-08-21T13:20:55.874] [INFO] default - serialPort1 IsOpen: true
+[2019-08-21T13:20:55.874] [INFO] default -  serialPort1 err: null
+[2019-08-21T13:20:55.875] [INFO] default - COM1
+[2019-08-21T13:20:55.876] [INFO] default - VSBC\DEVICES\0000
+[2019-08-21T13:20:55.876] [INFO] default - ELTIMA Software
+[2019-08-21T13:20:55.877] [INFO] default - COM2
+[2019-08-21T13:20:55.878] [INFO] default - VSBC\DEVICES\0001
+[2019-08-21T13:20:55.878] [INFO] default - ELTIMA Software
+[2019-08-22T09:40:12.243] [INFO] default - info 程序启动成功
+[2019-08-22T09:40:12.250] [WARN] default - warn 程序启动成功
+[2019-08-22T09:40:12.251] [ERROR] default - error 程序启动成功
+[2019-08-22T09:40:12.342] [INFO] default - serialPort1 IsOpen: true
+[2019-08-22T09:40:12.343] [INFO] default -  serialPort1 err: null
+[2019-08-22T09:40:12.344] [INFO] default - COM1
+[2019-08-22T09:40:12.345] [INFO] default - VSBC\DEVICES\0000
+[2019-08-22T09:40:12.345] [INFO] default - ELTIMA Software
+[2019-08-22T09:40:12.346] [INFO] default - COM2
+[2019-08-22T09:40:12.346] [INFO] default - VSBC\DEVICES\0001
+[2019-08-22T09:40:12.346] [INFO] default - ELTIMA Software

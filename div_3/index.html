@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+#div1 {width: 100px; height: 100px; background: red;}
+</style>
+<script>
+window.onload = function() {
+    
+    var oDiv = document.getElementById('div1');
+
+    oDiv.onmousewheel = fn;  //给div添加鼠标滚轮事件,非火狐浏览器
+    
+    if (oDiv.addEventListener) {  //火狐浏览器添加鼠标滚轮事件
+        oDiv.addEventListener('DOMMouseScroll', fn, false);
+    }
+    
+    function fn(ev) {  
+
+        var ev = ev || event;  //事件的浏览器兼容性
+        
+        var b = true;  //设置鼠标向上还是向下滚动的变量
+        
+        if (ev.wheelDelta) {  //如果方法存在说明是非火狐浏览器
+            b = ev.wheelDelta > 0 ? true : false;  //如果大于0为true向上，小于0为false向下
+        } else {
+            b = ev.detail < 0 ? true : false; //火狐浏览器
+        }
+        
+        
+        if ( b ) { //如果滚轮向上
+            this.style.height = this.offsetHeight - 10 + 'px';  //div高度-10
+        } else {
+            this.style.height = this.offsetHeight + 10 + 'px'; //div高度+10
+        }
+        
+        if (ev.preventDefault) { //取消火狐的默认事件
+            ev.preventDefault();
+        }
+        
+        return false;  //取消非火狐的滚轮默认事件
+        
+    }
+    
+}
+</script>
+</head>
+
+<body style="height: 2000px;">
+    <div id="div1"></div>
+</body>
+</html>
