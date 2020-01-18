@@ -1,0 +1,22 @@
+[2019-08-17T23:02:54.401] [INFO] default - info 程序启动成功
+[2019-08-17T23:02:54.418] [WARN] default - warn 程序启动成功
+[2019-08-17T23:02:54.419] [ERROR] default - error 程序启动成功
+[2019-08-17T23:02:54.668] [INFO] default - serialPort1 IsOpen: true
+[2019-08-17T23:02:54.669] [INFO] default -  serialPort1 err: null
+[2019-08-17T23:02:54.671] [INFO] default - COM1
+[2019-08-17T23:02:54.671] [INFO] default - VSBC\DEVICES\0000
+[2019-08-17T23:02:54.672] [INFO] default - ELTIMA Software
+[2019-08-17T23:02:54.673] [INFO] default - COM2
+[2019-08-17T23:02:54.674] [INFO] default - VSBC\DEVICES\0001
+[2019-08-17T23:02:54.674] [INFO] default - ELTIMA Software
+[2019-08-17T23:16:38.455] [INFO] default - info 程序启动成功
+[2019-08-17T23:16:38.463] [WARN] default - warn 程序启动成功
+[2019-08-17T23:16:38.463] [ERROR] default - error 程序启动成功
+[2019-08-17T23:16:38.621] [INFO] default - serialPort1 IsOpen: false
+[2019-08-17T23:16:38.623] [INFO] default -  serialPort1 err: [Error: Opening COM1: Access denied]
+[2019-08-17T23:16:38.624] [INFO] default - COM1
+[2019-08-17T23:16:38.625] [INFO] default - VSBC\DEVICES\0000
+[2019-08-17T23:16:38.626] [INFO] default - ELTIMA Software
+[2019-08-17T23:16:38.626] [INFO] default - COM2
+[2019-08-17T23:16:38.628] [INFO] default - VSBC\DEVICES\0001
+[2019-08-17T23:16:38.628] [INFO] default - ELTIMA Software
